@@ -1,11 +1,8 @@
 FROM node:latest
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+COPY ./src 
+COPY ./public 
 
-ADD . /usr/src/app/
-RUN npm install
-
-EXPOSE 8000
+EXPOSE 3000
 
 CMD [ "npm", "run", "start" ]
